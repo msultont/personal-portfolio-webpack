@@ -1,0 +1,13 @@
+{
+  "name": "personal-portfolio-webpack",
+  "version": "0.0.1",
+  "description": "Sulton Wibawa Portfolio build on top of Deep Webpack Configurations",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "keywords": ["web portfolio", "muhammad sulton tauhid", "sulton wibawa", "sulton"],
+  "author": "Muhammad Sulton Tauhid",
+  "license": "MIT"
+}
