@@ -6,12 +6,11 @@
   "scripts": {
     "test": "standard",
     "build": "webpack --config webpack.prod.js",
-    "start": "webpack serve --hot --port 3000",
+    "start": "webpack serve --config webpack.config.js",
     "cy:run": "cypress run",
     "preview": "npm run build && npm run start:dist",
     "build:dev": "webpack --config webpack.dev.js",
-    "start:dist": "http-server dist --port ${PORT:-8080}",
-    "start:advance": "webpack serve --config webpack.dev.js"
+    "start:dist": "http-server dist --port ${PORT:-8080}"
   },
   "version": "1.0.0",
   "keywords": [
