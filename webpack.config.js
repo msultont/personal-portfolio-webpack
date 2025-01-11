@@ -1,4 +1,5 @@
 const path = require("path")
+const webpack = require('webpack')
 const HtmlWebpackPlugin = require("html-webpack-plugin")
 const MiniCssExtractPlugin = require("mini-css-extract-plugin")
 const CssMinimizerPlugin = require("css-minimizer-webpack-plugin")
@@ -80,7 +81,8 @@ module.exports = function (env, argv) {
     output: {
       filename: "[name].js",
       path: path.resolve(__dirname, "dist"),
-      clean: true
+      clean: true,
+      // publicPath: './',
     },
     plugins: [
       new HtmlWebpackPlugin({
@@ -88,6 +90,11 @@ module.exports = function (env, argv) {
       }),
       new MiniCssExtractPlugin({
         filename: "[name].css"
+      }),
+      new webpack.ProvidePlugin({
+        $: 'jquery',
+        jQuery: 'jquery',
+        'window.jQuery': 'jquery'
       })
     ]
   }
