@@ -1,8 +1,8 @@
-const path = require("path")
-const webpack = require('webpack')
-const HtmlWebpackPlugin = require("html-webpack-plugin")
-const MiniCssExtractPlugin = require("mini-css-extract-plugin")
-const CssMinimizerPlugin = require("css-minimizer-webpack-plugin")
+const path = require("path");
+const webpack = require("webpack");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 
 module.exports = function (env, argv) {
   return {
@@ -40,7 +40,26 @@ module.exports = function (env, argv) {
         {
           // https://webpack.js.org/guides/asset-modules/#resource-assets
           test: /\.(png|jpe?g|gif|svg)$/i,
+          use: [
+            {
+              loader: "file-loader",
+              options: {
+                outputPath: "images"
+              }
+            }
+          ],
           type: "asset/resource"
+        },
+        {
+          test: /\.(woff|woff2|eot|ttf|otf)$/,
+          use: [
+            {
+              loader: "file-loader",
+              options: {
+                outputPath: "fonts" // folder name
+              }
+            }
+          ]
         },
         {
           // https://webpack.js.org/guides/asset-modules/#replacing-inline-loader-syntax
@@ -67,7 +86,8 @@ module.exports = function (env, argv) {
       extensions: [".js", ".jsx"],
       alias: {
         "@": path.resolve(__dirname, "src"),
-        "@components": path.resolve(__dirname, "src/components")
+        "@components": path.resolve(__dirname, "src/components"),
+        "@styles": path.resolve(__dirname, "src/styles")
         // "@config": path.resolve(__dirname, "src/config"),
         // "@page": path.resolve(__dirname, "src/pages"),
         // "@routes": path.resolve(__dirname, "src/routes"),
@@ -76,26 +96,30 @@ module.exports = function (env, argv) {
       }
     },
     optimization: {
-      minimize: true,
+      minimize: true
     },
     output: {
-      filename: "[name].js",
+      filename: "./js/[name].bundle.js",
       path: path.resolve(__dirname, "dist"),
       clean: true,
+      chunkFilename: "./js/chunkFilename.[name].bundle.js"
       // publicPath: './',
     },
     plugins: [
       new HtmlWebpackPlugin({
-        template: "index.html"
+        template: "./public/index.html"
       }),
       new MiniCssExtractPlugin({
-        filename: "[name].css"
+        filename: "css/[name].[contenthash].css",
+        chunkFilename: "css/[name].[id].css",
+        ignoreOrder: false
       }),
       new webpack.ProvidePlugin({
-        $: 'jquery',
-        jQuery: 'jquery',
-        'window.jQuery': 'jquery'
+        $: "jquery",
+        jQuery: "jquery",
+        "window.jQuery": "jquery",
+        moment: "moment"
       })
     ]
-  }
-}
+  };
+};
