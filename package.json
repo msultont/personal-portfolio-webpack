@@ -5,12 +5,9 @@
   "private": true,
   "scripts": {
     "test": "standard",
-    "build": "webpack --config webpack.prod.js",
-    "start": "webpack serve --config webpack.config.js",
-    "cy:run": "cypress run",
-    "preview": "npm run build && npm run start:dist",
-    "build:dev": "webpack --config webpack.config.js",
-    "start:dist": "http-server dist --port ${PORT:-8080}"
+    "build": "webpack --config webpack.config.js --env=production",
+    "start": "webpack serve --config webpack.config.js --env=development",
+    "cy:run": "cypress run"
   },
   "version": "0.0.2",
   "keywords": [
