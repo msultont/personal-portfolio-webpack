@@ -2,12 +2,18 @@ const path = require("path");
 const webpack = require("webpack");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
+
+/**
+ * complete webpack 5 configuration
+ * https://javascript.plainenglish.io/setting-up-webpack-for-the-production-and-development-3ca0b0b12ff5
+ */
 
 module.exports = function (env, argv) {
+  const isProduction = env.production ? "production" : "development";
+
   return {
-    mode: env.production ? "production" : "development",
-    devtool: env.production ? "source-map" : "eval-cheap-module-source-map",
+    mode: isProduction,
+    devtool: isProduction ? "source-map" : "eval-cheap-module-source-map",
     entry: path.resolve(__dirname, "src", "index.js"),
     module: {
       rules: [
@@ -40,26 +46,23 @@ module.exports = function (env, argv) {
         {
           // https://webpack.js.org/guides/asset-modules/#resource-assets
           test: /\.(png|jpe?g|gif|svg)$/i,
-          use: [
-            {
-              loader: "file-loader",
-              options: {
-                outputPath: "images"
-              }
-            }
-          ],
-          type: "asset/resource"
+          type: "asset/resource",
+          generator: {
+            filename: "images/[hash][ext][name][query]"
+          }
+
         },
         {
           test: /\.(woff|woff2|eot|ttf|otf)$/,
-          use: [
-            {
-              loader: "file-loader",
-              options: {
-                outputPath: "fonts" // folder name
-              }
+          type: "asset",
+          parser: {
+            dataUrlCondition: {
+              maxSize: 8 * 1024
             }
-          ]
+          },
+          generator: {
+            filename: "fonts/[hash][ext][name][query]"
+          }
         },
         {
           // https://webpack.js.org/guides/asset-modules/#replacing-inline-loader-syntax
