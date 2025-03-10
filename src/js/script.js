@@ -267,6 +267,32 @@
     });
   };
 
+  var handleScroll = function () {
+    var sections = $("section");
+    var navLinks = $(".navbar-nav .nav-link");
+
+    var currentSectionId = "";
+
+    sections.each(function () {
+      var sectionTop = $(this).offset().top;
+      if ($(window).scrollTop() >= sectionTop - 60) {
+        currentSectionId = $(this).attr("id");
+      }
+    });
+
+    navLinks.removeClass("active");
+    navLinks.each(function () {
+      if ($(this).attr("href") === `#${currentSectionId}`) {
+        $(this).addClass("active");
+      }
+    });
+  };
+
+  var navBarAutoActive = function() {
+    $(window).on("scroll", handleScroll);
+  }
+
+
   $(function () {
     contentWayPoint();
     goToTop1();
@@ -275,6 +301,7 @@
     parallax();
     // pieChart();
     skillsWayPoint();
+    navBarAutoActive();
     /** ==============FUNCTION CALL DIFFERENCES=================== */
     spinner();
     wow();

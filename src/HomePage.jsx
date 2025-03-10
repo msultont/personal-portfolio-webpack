@@ -1,92 +1,63 @@
 //images
 import bgImage from "./images/cover_bg_3.jpg";
 import sultonImage from "./images/sulton.png";
-import portfolio1 from "./images/portfolio-1.jpg";
-import portfolio2 from "./images/portfolio-2.jpg";
-import portfolio3 from "./images/portfolio-3.jpg";
-import portfolio4 from "./images/portfolio-4.jpg";
-import portfolio5 from "./images/portfolio-5.jpg";
-import portfolio6 from "./images/portfolio-6.jpg";
-import portfolio7 from "./images/portfolio-7.jpg";
-import portfolio8 from "./images/portfolio-8.jpg";
+import jobData from "./jobData";
 
-import { Link, useNavigate } from "react-router";
+import { Link } from "react-router";
 import useHideLoader from "./hooks/useHideLoader";
 
 const HomePage = () => {
   useHideLoader(); // hide loader on mount
-
-  const navigate = useNavigate();
 
   return (
     <>
       <div className="fh5co-loader"></div>
 
       {/* Navbar Start */}
-      <nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0">
-        <a
-          href="index.html"
-          class="navbar-brand d-flex align-items-center px-4 px-lg-5"
+      <nav className="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0">
+        <Link
+          to="/"
+          className="navbar-brand d-flex align-items-center px-4 px-lg-5"
         >
-          <h2 class="m-0 text-primary">
-            <i class="fa fa-car me-3"></i>CarServ
+          <h2 className="m-0 text-primary">
+            <i className="fa fa-car me-3"></i>BPSA
           </h2>
-        </a>
+        </Link>
+
         <button
           type="button"
-          class="navbar-toggler me-4"
+          className="navbar-toggler me-4"
           data-bs-toggle="collapse"
           data-bs-target="#navbarCollapse"
         >
-          <span class="navbar-toggler-icon"></span>
+          <span className="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarCollapse">
-          <div class="navbar-nav ms-auto p-4 p-lg-0">
-            <a href="index.html" class="nav-item nav-link active">
+
+        <div className="collapse navbar-collapse" id="navbarCollapse">
+          <div className="navbar-nav ms-auto p-4 p-lg-0">
+            <a href="#fh5co-header" className="nav-item nav-link active">
               Home
             </a>
-            <a href="about.html" class="nav-item nav-link">
+            <a href="#fh5co-about" className="nav-item nav-link">
               About
             </a>
-            <a href="service.html" class="nav-item nav-link">
-              Services
-            </a>
-            <div class="nav-item dropdown">
-              <a
-                href="#"
-                class="nav-link dropdown-toggle"
-                data-bs-toggle="dropdown"
-              >
-                Pages
-              </a>
-              <div class="dropdown-menu fade-up m-0">
-                <a href="booking.html" class="dropdown-item">
-                  Booking
-                </a>
-                <a href="team.html" class="dropdown-item">
-                  Technicians
-                </a>
-                <a href="testimonial.html" class="dropdown-item">
-                  Testimonial
-                </a>
-                <a href="404.html" class="dropdown-item">
-                  404 Page
-                </a>
-              </div>
-            </div>
-            <a href="contact.html" class="nav-item nav-link">
-              Contact
+            <a href="#fh5co-work" className="nav-item nav-link">
+              Works
             </a>
           </div>
-          <a href="" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block">
-            Get A Quote<i class="fa fa-arrow-right ms-3"></i>
-          </a>
+
+          <Link
+            to="/quote"
+            className="btn btn-primary py-4 px-lg-5 d-none d-lg-block"
+          >
+            Get A Quote<i className="fa fa-arrow-right ms-3"></i>
+          </Link>
         </div>
       </nav>
       {/* Navbar End */}
 
       <div id="page">
-        <header
+        <section
           id="fh5co-header"
           className="fh5co-cover js-fullheight"
           role="banner"
@@ -151,10 +122,10 @@ const HomePage = () => {
               </div>
             </div>
           </div>
-        </header>
+        </section>
       </div>
 
-      <div id="fh5co-about" className="animate-box">
+      <section id="fh5co-about" className="animate-box">
         <div className="container">
           <div className="row">
             <div className="col-md-11 col-md-offset-2 text-center fh5co-heading">
@@ -205,9 +176,9 @@ const HomePage = () => {
             </div>
           </div>
         </div>
-      </div>
+      </section>
 
-      <div id="fh5co-work" className="fh5co-bg-dark">
+      <section id="fh5co-work" className="fh5co-bg-dark">
         <div className="container">
           <div className="row animate-box">
             <div className="col-md-11 col-md-offset-2 text-center fh5co-heading">
@@ -215,105 +186,26 @@ const HomePage = () => {
             </div>
           </div>
           <div className="row">
-            <div className="col-md-3 text-center col-padding animate-box">
-              <Link
-                to="/project/1"
-                className="work"
-                style={{ backgroundImage: `url(${portfolio1})` }}
-              >
-                <div className="desc">
-                  <h3>Sea Port Maps</h3>
-                  <span>Java Desktop Application</span>
-                </div>
-              </Link>
-            </div>
-            <div className="col-md-3 text-center col-padding animate-box">
+            {jobData.map((job, index) => (
               <div
-                className="work"
-                style={{ backgroundImage: `url(${portfolio2})` }}
-                onClick={() => navigate("/project/2")}
+                key={index}
+                className="col-md-3 text-center col-padding animate-box"
               >
-                <div className="desc">
-                  <h3>Project Name</h3>
-                  <span>Brading</span>
-                </div>
+                <Link
+                  to={`/project/${index + 1}`}
+                  className="work"
+                  style={{ backgroundImage: `url(${job.images[0]})` }}
+                >
+                  <div className="desc">
+                    <h3>{job.title}</h3>
+                    <span>{job.date}</span>
+                  </div>
+                </Link>
               </div>
-            </div>
-            <div className="col-md-3 text-center col-padding animate-box">
-              <a
-                className="work"
-                style={{ backgroundImage: `url(${portfolio3})` }}
-                onClick={() => navigate("/project/3")}
-              >
-                <div className="desc">
-                  <h3>Project Name</h3>
-                  <span>Illustration</span>
-                </div>
-              </a>
-            </div>
-            <div className="col-md-3 text-center col-padding animate-box">
-              <a
-                className="work"
-                style={{ backgroundImage: `url(${portfolio4})` }}
-                onClick={() => navigate("/project/4")}
-              >
-                <div className="desc">
-                  <h3>Project Name</h3>
-                  <span>Design</span>
-                </div>
-              </a>
-            </div>
-            <div className="col-md-3 text-center col-padding animate-box">
-              <a
-                className="work"
-                style={{ backgroundImage: `url(${portfolio5})` }}
-                onClick={() => navigate("/project/5")}
-              >
-                <div className="desc">
-                  <h3>Project Name</h3>
-                  <span>Website</span>
-                </div>
-              </a>
-            </div>
-            <div className="col-md-3 text-center col-padding animate-box">
-              <a
-                className="work"
-                style={{ backgroundImage: `url(${portfolio6})` }}
-                onClick={() => navigate("/project/6")}
-              >
-                <div className="desc">
-                  <h3>Project Name</h3>
-                  <span>Illustration</span>
-                </div>
-              </a>
-            </div>
-            <div className="col-md-3 text-center col-padding animate-box">
-              <a
-                className="work"
-                style={{ backgroundImage: `url(${portfolio7})` }}
-                onClick={() => navigate("/project/7")}
-              >
-                <div className="desc">
-                  <h3>Project Name</h3>
-                  <span>Brading</span>
-                </div>
-              </a>
-            </div>
-            <div className="col-md-3 text-center col-padding animate-box">
-              <a
-                className="work"
-                style={{ backgroundImage: `url(${portfolio8})` }}
-                onClick={() => navigate("/project/8")}
-              >
-                <div className="desc">
-                  <h3>Project Name</h3>
-                  <span>Illustration</span>
-                </div>
-              </a>
-            </div>
+            ))}
           </div>
         </div>
-      </div>
+      </section>
 
       <div className="gototop js-top">
         <a href="#" className="js-gotop">
