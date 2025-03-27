@@ -13,7 +13,7 @@ module.exports = function (env, argv) {
 
   return {
     mode: isProduction,
-    devtool: isProduction ? "source-map" : "eval-cheap-module-source-map",
+    devtool: isProduction ? "source-map" : "eval",
     entry: path.resolve(__dirname, "src", "index.js"),
     module: {
       rules: [
@@ -50,7 +50,6 @@ module.exports = function (env, argv) {
           generator: {
             filename: "images/[hash][ext][name][query]"
           }
-
         },
         {
           test: /\.(woff|woff2|eot|ttf|otf)$/,
@@ -105,12 +104,13 @@ module.exports = function (env, argv) {
       filename: "./js/[name].bundle.js",
       path: path.resolve(__dirname, "dist"),
       clean: true,
-      chunkFilename: "./js/chunkFilename.[name].bundle.js"
-      // publicPath: './',
+      chunkFilename: "./js/chunkFilename.[name].bundle.js",
+      publicPath: "/"
     },
     plugins: [
       new HtmlWebpackPlugin({
-        template: "./public/index.html"
+        template: "./public/index.html",
+        favicon: "./src/images/bandar-pelumas-logo.png"
       }),
       new MiniCssExtractPlugin({
         filename: "css/[name].[contenthash].css",
