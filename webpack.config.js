@@ -110,7 +110,7 @@ module.exports = function (env, argv) {
     plugins: [
       new HtmlWebpackPlugin({
         template: "./public/index.html",
-        favicon: "./src/images/bandar-pelumas-logo.png"
+        // favicon: "./src/images/bandar-pelumas-logo.png"
       }),
       new MiniCssExtractPlugin({
         filename: "css/[name].[contenthash].css",
