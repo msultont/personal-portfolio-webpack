@@ -1,16 +1,18 @@
-import portfolio1 from "./images/portfolio-javadeveloper.jpeg";
-import portfolio2 from "./images/portfolio-joomva.png";
-import portfolio3 from "./images/portfolio-3.jpg";
-import portfolio4 from "./images/portfolio-4.jpg";
-import portfolio5 from "./images/portfolio-5.jpg";
-import portfolio6 from "./images/portfolio-bappenas1.jpeg";
-import portfolio7 from "./images/portfolio-bappenas2.jpeg";
-import portfolio8 from "./images/portfolio-bappenas3.jpeg";
+import portfolio1 from "./images/bpsa-cipondoh.jpg";
+import portfolio2 from "./images/bpsa-lembang.jpg";
+import portfolio3 from "./images/bpsa-bintaro.jpg";
+import portfolio4 from "./images/bpsa-ciledug.jpeg";
+import portfolio5 from "./images/bpsa-galeong.jpg";
+import portfolio6 from "./images/bpsa-selapajang.jpg";
+import portfolio7 from "./images/bpsa-karawaci.jpg";
+import portfolio8 from "./images/bpsa-cikokol.jpg";
+import portfolio9 from "./images/bpsa-maestro.jpg";
 
 const jobData = [
   {
-    title: "Java Desktop Developer",
-    status: "Freelance",
+    id: 1,
+    title: "Bandar Pelumas Cipondoh",
+    alamat: "Freelance",
     date: "March 2020 - May 2020",
     description1: `
 I developed a comprehensive Java-based desktop application designed to calculate the most efficient sea-port route by implementing advanced algorithms and user-friendly interfaces. The application utilizes the Dijkstra algorithm to determine the shortest path between multiple sea-port locations, combined with a fitness function to optimize route selection based on specific criteria such as distance, time efficiency, and operational constraints. To enhance the user experience, I integrated the SWT Map API to visualize the calculated routes, providing an interactive and intuitive map interface for users to analyze and interpret the optimal paths.`,
@@ -58,8 +60,9 @@ I developed a comprehensive Java-based desktop application designed to calculate
     images: [portfolio1]
   },
   {
-    title: "Joomva - Full Stack Developer",
-    status: "Internship",
+    id: 2,
+    title: "Bandar Pelumas Lembang",
+    alamat: "Internship",
     date: "July 2020 - October 2020",
     description1:
       "Joomva is a comprehensive e-learning management system (LMS) designed to facilitate school administration and remote learning. It provides teachers with tools to manage student data, course materials, and schedules, while offering students access to an integrated video conferencing platform for online classes. This system was developed using Vue.js for the front-end framework and Bootstrap to ensure a responsive and user-friendly interface across various devices.",
@@ -107,37 +110,68 @@ I developed a comprehensive Java-based desktop application designed to calculate
     images: [portfolio2]
   },
   {
-    title: "Titipaket - Frontend Developer",
-    status: "Intership",
+    id: 3,
+    title: "Bandar Pelumas Bintaro",
+    alamat: "Intership",
     date: "October 2020 - January 2021",
     description1:
       "TitipPaket is an expedition courier app which cooperate with driver to send logistics. My project was developing the admin dashboard focus on table system and filter system.",
     images: [portfolio3]
   },
   {
-    title: "Seighneur Application",
-    status: "Project-Based",
+    id: 4,
+    title: "Bandar Pelumas Pedurenan",
+    alamat: "Project-Based",
     date: "February 2021 - June 2021",
     description1:
       "Seighneur is an electron-desktop-based application built on website technology using React. This application is used to facilitate the inventory process of land assets",
     images: [portfolio4]
   },
   {
-    title: "AJB Document Entity Recognition",
-    status: "Final Thesis Project",
+    id: 5,
+    title: "Bandar Pelumas Galeong",
+    alamat: "Final Thesis Project",
     date: "February 2021 - June 2021",
     description1:
       "A React based website application integrated with machine learning model to recognize entity of AJB document using Python and utilize Google Vision API to extract text of AJB document",
     images: [portfolio5]
   },
   {
-    title: "Bappenas - Software Engineer",
-    status: "Contract",
+    id: 6,
+    title: "Bandar Pelumas Selapajang",
+    alamat: "Contract",
     date: "January 2022 - April 2023",
     description1:
       "A React based website application integrated with machine learning model to recognize entity of AJB document using Python and utilize Google Vision API to extract text of AJB document",
-    images: [portfolio6, portfolio7, portfolio8]
+    images: [portfolio6]
   },
+  {
+    id: 7,
+    title: "Bandar Pelumas Karawaci",
+    alamat: "Contract",
+    date: "January 2022 - April 2023",
+    description1:
+      "A React based website application integrated with machine learning model to recognize entity of AJB document using Python and utilize Google Vision API to extract text of AJB document",
+    images: [portfolio7]
+  },
+  {
+    id: 8,
+    title: "Bandar Pelumas Cikokol",
+    alamat: "Contract",
+    date: "January 2022 - April 2023",
+    description1:
+      "A React based website application integrated with machine learning model to recognize entity of AJB document using Python and utilize Google Vision API to extract text of AJB document",
+    images: [portfolio8]
+  },
+  {
+    id: 9,
+    title: "Maestro by Bandar Pelumas",
+    alamat: "Contract",
+    date: "January 2022 - April 2023",
+    description1:
+      "A React based website application integrated with machine learning model to recognize entity of AJB document using Python and utilize Google Vision API to extract text of AJB document",
+    images: [portfolio9, portfolio2, portfolio3, portfolio4]
+  }
   // Add more job data as needed
 ];
 

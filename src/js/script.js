@@ -1,7 +1,7 @@
+var WOW = require("./wow.min");
+
 (function () {
   "use strict";
-
-  var WOW = require("./wow.min");
 
   var isMobile = {
     Android: function () {
@@ -167,7 +167,8 @@
 
   // Initiate the wowjs
   var wow = function () {
-    new WOW().init();
+    const w0w = new WOW();
+    w0w.init();
   };
 
   // Sticky Navbar
@@ -288,10 +289,9 @@
     });
   };
 
-  var navBarAutoActive = function() {
+  var navBarAutoActive = function () {
     $(window).on("scroll", handleScroll);
-  }
-
+  };
 
   $(function () {
     contentWayPoint();

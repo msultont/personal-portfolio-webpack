@@ -1,9 +1,9 @@
 import React from "react";
 import {
-  HashRouter as Router,
+  BrowserRouter as Router,
   Routes,
   Route,
-} from "react-router";
+} from "react-router-dom";
 
 //component
 import HomePage from "./HomePage";
@@ -47,7 +47,7 @@ const App = () => {
     <Router>
       <Routes>
         <Route path="/" element={<HomePage />} />
-        <Route path="/project/:id" element={<WorkDetails />} />
+        <Route path="/cabang/:slug" element={<WorkDetails />} />
       </Routes>
     </Router>
   );
