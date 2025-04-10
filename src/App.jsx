@@ -1,9 +1,9 @@
 import React from "react";
 import {
-  HashRouter as Router,
+  BrowserRouter as Router,
   Routes,
   Route,
-} from "react-router";
+} from "react-router-dom";
 
 //component
 import HomePage from "./HomePage";
