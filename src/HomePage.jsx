@@ -27,8 +27,7 @@ const HomePage = () => {
               <div className="col-md-11 col-md-offset-2 text-center">
                 <div className="display-t js-fullheight">
                   <div
-                    className="display-tc js-fullheight animate-box"
-                    data-animate-effect="fadeIn"
+                    className="display-tc js-fullheight wow fadeIn"
                   >
                     <div
                       className="profile-thumb"
