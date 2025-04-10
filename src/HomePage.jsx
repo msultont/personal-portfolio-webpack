@@ -81,7 +81,7 @@ const HomePage = () => {
         </section>
       </div>
 
-      <section id="fh5co-about" className="animate-box">
+      <section id="fh5co-about" className="wow fadeIn" data-wow-delay="0.3s">
         <div className="container">
           <div className="row">
             <div className="col-md-11 col-md-offset-2 text-center fh5co-heading">
@@ -136,7 +136,7 @@ const HomePage = () => {
 
       <section id="fh5co-work" className="fh5co-bg-dark">
         <div className="container">
-          <div className="row animate-box">
+          <div className="row wow fadeInUp">
             <div className="col-md-11 col-md-offset-2 text-center fh5co-heading">
               <h2>Work</h2>
             </div>
@@ -145,7 +145,7 @@ const HomePage = () => {
             {jobData.map((job, index) => (
               <div
                 key={index}
-                className="col-md-3 text-center col-padding animate-box"
+                className="col-md-3 text-center col-padding wow fadeInLeft" data-wow-delay={`${0.1 + index * 0.2}s`}
               >
                 <Link
                   to={`/project/${index + 1}`}
