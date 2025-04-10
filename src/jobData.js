@@ -1,8 +1,18 @@
 import portfolio1 from "./images/portfolio-javadeveloper.jpeg";
 import portfolio2 from "./images/portfolio-joomva.png";
 import portfolio3 from "./images/portfolio-3.jpg";
-import portfolio4 from "./images/portfolio-4.jpg";
-import portfolio5 from "./images/portfolio-5.jpg";
+import portfolio4 from "./images/seighneur-9.png";
+import portfolio44 from "./images/seighneur-1.png";
+import portfolio444 from "./images/seighneur-2.png";
+import portfolio4444 from "./images/seighneur-3.png";
+import portfolio44444 from "./images/seighneur-4.png";
+import portfolio444444 from "./images/seighneur-5.png";
+import portfolio4444444 from "./images/seighneur-6.png";
+import portfolio44444444 from "./images/seighneur-7.png";
+import portfolio444444444 from "./images/seighneur-8.png";
+import portfolio5 from "./images/SDTR-1.png";
+import portfolio55 from "./images/SDTR-2.png";
+import portfolio555 from "./images/SDTR-3.png";
 import portfolio6 from "./images/portfolio-bappenas1.jpeg";
 import portfolio7 from "./images/portfolio-bappenas2.jpeg";
 import portfolio8 from "./images/portfolio-bappenas3.jpeg";
@@ -120,7 +130,7 @@ I developed a comprehensive Java-based desktop application designed to calculate
     date: "February 2021 - June 2021",
     description1:
       "Seighneur is an electron-desktop-based application built on website technology using React. This application is used to facilitate the inventory process of land assets",
-    images: [portfolio4]
+    images: [portfolio4, portfolio44, portfolio444, portfolio4444, portfolio44444, portfolio444444, portfolio4444444, portfolio44444444, portfolio444444444]
   },
   {
     title: "AJB Document Entity Recognition",
@@ -128,7 +138,7 @@ I developed a comprehensive Java-based desktop application designed to calculate
     date: "February 2021 - June 2021",
     description1:
       "A React based website application integrated with machine learning model to recognize entity of AJB document using Python and utilize Google Vision API to extract text of AJB document",
-    images: [portfolio5]
+    images: [portfolio5, portfolio55, portfolio555]
   },
   {
     title: "Bappenas - Software Engineer",
