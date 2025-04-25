@@ -1,12 +1,12 @@
-import portfolio1 from "./images/bpsa-cipondoh.jpg";
-import portfolio2 from "./images/bpsa-lembang.jpg";
-import portfolio3 from "./images/bpsa-bintaro.jpg";
-import portfolio4 from "./images/bpsa-ciledug.jpeg";
-import portfolio5 from "./images/bpsa-galeong.jpg";
-import portfolio6 from "./images/bpsa-selapajang.jpg";
-import portfolio7 from "./images/bpsa-karawaci.jpg";
-import portfolio8 from "./images/bpsa-cikokol.jpg";
-import portfolio9 from "./images/bpsa-maestro.jpg";
+import portfolio1 from "@images/bpsa-cipondoh.jpg";
+import portfolio2 from "@images/bpsa-lembang.jpg";
+import portfolio3 from "@images/bpsa-bintaro.jpg";
+import portfolio4 from "@images/bpsa-ciledug.jpeg";
+import portfolio5 from "@images/bpsa-galeong.jpg";
+import portfolio6 from "@images/bpsa-selapajang.jpg";
+import portfolio7 from "@images/bpsa-karawaci.jpg";
+import portfolio8 from "@images/bpsa-cikokol.jpg";
+import portfolio9 from "@images/bpsa-maestro.jpg";
 
 const jobData = [
   {

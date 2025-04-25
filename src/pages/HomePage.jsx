@@ -1,13 +1,13 @@
 //images
-import bgImage from "./images/cover_bg_3.jpg";
-import bgImage2 from "./images/carousel-bg-1.jpg";
-import bandarImage from "./images/bandar-pelumas-logo.png";
-import service1 from "./images/service-1.jpg";
-import service2 from "./images/service-2.jpg";
-import service3 from "./images/service-3.jpg";
-import service4 from "./images/service-4.jpg";
+import bgImage from "@images/cover_bg_3.jpg";
+import bgImage2 from "@images/carousel-bg-1.jpg";
+import bandarImage from "@images/bandar-pelumas-logo.png";
+import service1 from "@images/service-1.jpg";
+import service2 from "@images/service-2.jpg";
+import service3 from "@images/service-3.jpg";
+import service4 from "@images/service-4.jpg";
 
-import jobData from "./jobData";
+import jobData from "@mock/jobData";
 
 import { Link } from "react-router";
 import useHideLoader from "@hooks/useHideLoader";

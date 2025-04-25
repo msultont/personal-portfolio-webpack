@@ -6,8 +6,8 @@ import {
 } from "react-router-dom";
 
 //component
-import HomePage from "./HomePage";
-import { WorkDetails } from "./WorkPage";
+import HomePage from "@pages/HomePage";
+import { WorkDetails } from "@pages/WorkPage.jsx";
 
 //css styles
 import "animate.css/animate.min.css";
