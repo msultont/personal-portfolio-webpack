@@ -10,7 +10,7 @@ import service4 from "./images/service-4.jpg";
 import jobData from "./jobData";
 
 import { Link } from "react-router";
-import useHideLoader from "./hooks/useHideLoader";
+import useHideLoader from "@hooks/useHideLoader";
 
 const HomePage = () => {
   useHideLoader(); // hide loader on mount
