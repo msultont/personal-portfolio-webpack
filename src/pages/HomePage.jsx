@@ -1,10 +1,10 @@
 //images
-import bgImage from "./images/cover_bg_3.jpg";
-import sultonImage from "./images/sulton.png";
-import jobData from "./jobData";
+import bgImage from "@images/cover_bg_3.jpg";
+import sultonImage from "@images/sulton.png";
+import jobData from "@mock/jobData";
 
 import { Link } from "react-router";
-import useHideLoader from "./hooks/useHideLoader";
+import useHideLoader from "@hooks/useHideLoader";
 
 const HomePage = () => {
   useHideLoader(); // hide loader on mount
@@ -26,9 +26,7 @@ const HomePage = () => {
             <div className="row">
               <div className="col-md-11 col-md-offset-2 text-center">
                 <div className="display-t js-fullheight">
-                  <div
-                    className="display-tc js-fullheight wow fadeIn"
-                  >
+                  <div className="display-tc js-fullheight wow fadeIn">
                     <div
                       className="profile-thumb"
                       style={{ backgroundImage: `url(${sultonImage})` }}
@@ -145,7 +143,8 @@ const HomePage = () => {
             {jobData.map((job, index) => (
               <div
                 key={index}
-                className="col-md-3 text-center col-padding wow fadeInLeft" data-wow-delay={`${0.1 + index * 0.2}s`}
+                className="col-md-3 text-center col-padding wow fadeInLeft"
+                data-wow-delay={`${0.1 + index * 0.2}s`}
               >
                 <Link
                   to={`/project/${index + 1}`}
