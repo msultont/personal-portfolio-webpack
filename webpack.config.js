@@ -2,6 +2,7 @@ const path = require("path");
 const webpack = require("webpack");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const TerserPlugin = require("terser-webpack-plugin");
 
 /**
  * complete webpack 5 configuration
@@ -9,11 +10,14 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
  */
 
 module.exports = function (env, argv) {
-  const isProduction = env.production ? "production" : "development";
+  const LAUNCH_COMMAND = process.env.npm_lifecycle_event;
+  const mode = env.production ? "production" : "development";
+
+  console.log(env.production);
 
   return {
-    mode: isProduction,
-    devtool: isProduction ? "source-map" : "eval",
+    mode: mode,
+    devtool: mode === "production" ? "source-map" : "eval",
     entry: path.resolve(__dirname, "src", "index.js"),
     module: {
       rules: [
@@ -87,18 +91,40 @@ module.exports = function (env, argv) {
       // extensions: [".tsx", ".ts", ".js"]
       extensions: [".js", ".jsx"],
       alias: {
-        "@": path.resolve(__dirname, "src"),
         "@components": path.resolve(__dirname, "src/components"),
-        "@styles": path.resolve(__dirname, "src/styles")
+        "@styles": path.resolve(__dirname, "src/styles"),
+        "@pages": path.resolve(__dirname, "src/pages"),
+        "@images": path.resolve(__dirname, "src/images"),
+        "@mock": path.resolve(__dirname, "src/mock"),
+        "@hooks": path.resolve(__dirname, "src/hooks")
         // "@config": path.resolve(__dirname, "src/config"),
-        // "@page": path.resolve(__dirname, "src/pages"),
         // "@routes": path.resolve(__dirname, "src/routes"),
         // "@services": path.resolve(__dirname, "src/services"),
         // "@utils": path.resolve(__dirname, "src/utils")
       }
     },
     optimization: {
-      minimize: true
+      minimize: true,
+      minimizer: [
+        new TerserPlugin({
+          parallel: true,
+          terserOptions: {
+            parse: {
+              ecma: 8
+            },
+            compress: {
+              // warning     : true, // Could cause problems
+              comparisons: false,
+              ecma: 5,
+              inline: 2
+            },
+            output: {
+              ascii_only: true,
+              ecma: 5
+            }
+          }
+        })
+      ]
     },
     output: {
       filename: "./js/[name].bundle.js",
@@ -109,7 +135,7 @@ module.exports = function (env, argv) {
     },
     plugins: [
       new HtmlWebpackPlugin({
-        template: "./public/index.html",
+        template: "./public/index.html"
         // favicon: "./src/images/bandar-pelumas-logo.png"
       }),
       new MiniCssExtractPlugin({
