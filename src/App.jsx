@@ -1,13 +1,9 @@
 import React from "react";
-import {
-  BrowserRouter as Router,
-  Routes,
-  Route,
-} from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 //component
-import HomePage from "./HomePage";
-import { WorkDetails } from "./WorkPage";
+import HomePage from "@pages/HomePage";
+import { WorkDetails } from "@pages/WorkPage";
 
 //css styles
 import "animate.css/animate.min.css";
@@ -17,7 +13,6 @@ import "owl.carousel/dist/assets/owl.carousel.css";
 import "@styles/tempusdominus/css/tempusdominus-bootstrap-4.min.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "@styles/style.css";
-
 
 // wow
 import "./js/wow.min.js";
