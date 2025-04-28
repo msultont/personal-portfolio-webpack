@@ -6,7 +6,6 @@ import {
 } from "react-router-dom";
 
 //component
-// testing new update to project folder
 import HomePage from "@pages/HomePage";
 import { WorkDetails } from "@pages/WorkPage.jsx";
 import StockPageOF from "@pages/StockPageOF.jsx";
@@ -49,8 +48,8 @@ const App = () => {
     <Router>
       <Routes>
         <Route path="/" element={<HomePage />} />
-        <Route path="/StokOF" element={<StockPageOF />} />
         <Route path="/cabang/:slug" element={<WorkDetails />} />
+        <Route path="/StokOF" element={<StockPageOF />} />
       </Routes>
     </Router>
   );

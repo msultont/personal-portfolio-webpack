@@ -13,8 +13,6 @@ module.exports = function (env, argv) {
   const LAUNCH_COMMAND = process.env.npm_lifecycle_event;
   const mode = env.production ? "production" : "development";
 
-  console.log(env.production);
-
   return {
     mode: mode,
     devtool: mode === "production" ? "source-map" : "eval",

@@ -9,7 +9,7 @@ import service4 from "@images/service-4.jpg";
 
 import jobData from "@mock/jobData";
 
-import { Link } from "react-router";
+import { Link } from "react-router-dom";
 import useHideLoader from "@hooks/useHideLoader";
 
 const HomePage = () => {
@@ -412,6 +412,7 @@ const HomePage = () => {
           <div className="row">
             {jobData.map((job, index) => {
               const slug = job.title.toLowerCase().replace(/\s/g, "-");
+              console.log(`Homepage console: ${slug}`)
               return (
                 <div
                   key={index}
