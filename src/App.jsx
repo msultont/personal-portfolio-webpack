@@ -6,6 +6,7 @@ import {
 } from "react-router-dom";
 
 //component
+// testing new update to project folder
 import HomePage from "@pages/HomePage";
 import { WorkDetails } from "@pages/WorkPage.jsx";
 import StockPageOF from "@pages/StockPageOF.jsx";
