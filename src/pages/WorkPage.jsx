@@ -1,5 +1,5 @@
 import React from "react";
-import { useParams } from "react-router";
+import { useLocation } from "react-router-dom";
 
 import blogImage1 from "@images/blog-1.jpg";
 import blogImage2 from "@images/blog-2.jpg";
@@ -7,7 +7,8 @@ import jobData from "@mock/jobData"; // Import job data
 import useScrollToTop from "@hooks/useScrollToTop";
 
 export const WorkPages = ({ id }) => {
-  const job = jobData[id - 1];
+  const job = jobData[id];
+  console.log(`Workpages console: ${id}`)
   useScrollToTop(); //Scroll goes to top when page loaded
   return (
     <div id="fh5co-work-details" className="fh5co-bg-dark">
@@ -78,6 +79,7 @@ export const WorkPages = ({ id }) => {
 };
 
 export const WorkDetails = () => {
-  const { id } = useParams();
-  return <WorkPages id={id} />;
+  const data = useLocation();
+  console.log(`Workdetails console: ${JSON.stringify(data)}`)
+  return <WorkPages id={data.state.id} />;
 };
