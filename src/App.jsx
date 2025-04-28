@@ -8,14 +8,15 @@ import {
 //component
 import HomePage from "@pages/HomePage";
 import { WorkDetails } from "@pages/WorkPage.jsx";
+import StockPageOF from "@pages/StockPageOF.jsx";
 
 //css styles
+import "bootstrap/dist/css/bootstrap.min.css";
 import "animate.css/animate.min.css";
+import "owl.carousel/dist/assets/owl.carousel.css";
 import "@styles/flexslider.css";
 import "@styles/icomoon.css";
-import "owl.carousel/dist/assets/owl.carousel.css";
 import "@styles/tempusdominus/css/tempusdominus-bootstrap-4.min.css";
-import "bootstrap/dist/css/bootstrap.min.css";
 import "@styles/style.css";
 
 
@@ -47,6 +48,7 @@ const App = () => {
     <Router>
       <Routes>
         <Route path="/" element={<HomePage />} />
+        <Route path="/StokOF" element={<StockPageOF />} />
         <Route path="/cabang/:slug" element={<WorkDetails />} />
       </Routes>
     </Router>
