@@ -87,31 +87,22 @@ const HomePage = () => {
           <div className="container-fluid p-0 mb-5">
             <div
               id="header-carousel"
-              className="carousel slide"
+              className="carousel slide carousel-fade"
               data-bs-ride="carousel"
               data-bs-interval="3000"
+              style={{ "--bs-carousel-transition-duration": "1s" }}
             >
               <div className="carousel-inner">
                 <div className="carousel-item active">
-                  <img
-                    className="w-100"
-                    src={bgImage}
-                    alt="Carousel Background 1"
-                  />
+                  <img className="w-100" src={bgImage} alt="Carousel Background 1" />
                 </div>
-
                 <div className="carousel-item">
-                  <img
-                    className="w-100"
-                    src={bgImage2}
-                    alt="Carousel Background 2"
-                  />
+                  <img className="w-100" src={bgImage2} alt="Carousel Background 2" />
                 </div>
               </div>
             </div>
           </div>
-
-          {/* Konten utama header (diletakkan di atas carousel) */}
+          {/* Konten utama header (diletakkan di atas carousel) */}}
           <div className="header-main-content">
             <div className="container">
               <div className="row">
@@ -154,6 +145,41 @@ const HomePage = () => {
         </section>
       </div>
 
+            <section id="fh5co-work">
+        <div className="container">
+          <div className="row wow fadeInUp">
+            <div className="col-md-11 col-md-offset-2 text-center fh5co-heading">
+              <h2>Cabang Kami</h2>
+            </div>
+          </div>
+          <div className="row">
+            {jobData.map((job, index) => {
+              const slug = job.title.toLowerCase().replace(/\s/g, "-");
+              console.log(`Homepage console: ${slug}`)
+              return (
+                <div
+                  key={index}
+                  // className="col-md-3 text-center col-padding wow fadeInLeft"
+                  className="col-md-3 text-center col-padding wow"
+                  data-wow-delay={`${0.1 + index * 0.2}s`}
+                >
+                  <Link
+                    to={`/cabang/${slug}`}
+                    state={{ id: index }}
+                    className="work"
+                    style={{ backgroundImage: `url(${job.images[0]})` }}
+                  >
+                    <div className="desc">
+                      <h3>{job.title}</h3>
+                    </div>
+                  </Link>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
       <section id="fh5co-about" className="wow fadeIn" data-wow-delay="0.3s">
         <div className="container">
           <div className="row">
@@ -180,7 +206,7 @@ const HomePage = () => {
               </p>
             </div>
             <div className="col-md-6">
-              <h2>Format Header 2</h2>
+              <h2>Bandar Pelumas</h2>
               <p>
                 A dedicated and detail-oriented professional with two years of
                 experience in operational management and data entry at PT.
@@ -402,39 +428,6 @@ const HomePage = () => {
         </div>
       </section>
 
-      <section id="fh5co-work">
-        <div className="container">
-          <div className="row wow fadeInUp">
-            <div className="col-md-11 col-md-offset-2 text-center fh5co-heading">
-              <h2>Cabang Kami</h2>
-            </div>
-          </div>
-          <div className="row">
-            {jobData.map((job, index) => {
-              const slug = job.title.toLowerCase().replace(/\s/g, "-");
-              console.log(`Homepage console: ${slug}`)
-              return (
-                <div
-                  key={index}
-                  className="col-md-3 text-center col-padding wow fadeInLeft"
-                  data-wow-delay={`${0.1 + index * 0.2}s`}
-                >
-                  <Link
-                    to={`/cabang/${slug}`}
-                    state={{ id: index }}
-                    className="work"
-                    style={{ backgroundImage: `url(${job.images[0]})` }}
-                  >
-                    <div className="desc">
-                      <h3>{job.title}</h3>
-                    </div>
-                  </Link>
-                </div>
-              );
-            })}
-          </div>
-        </div>
-      </section>
 
       <section className="fh5co-bg-dark wow fadeInUp" data-wow-delay="0.3s">
         <div className="container-xxl py-5">

@@ -163,15 +163,15 @@ I developed a comprehensive Java-based desktop application designed to calculate
       "A React based website application integrated with machine learning model to recognize entity of AJB document using Python and utilize Google Vision API to extract text of AJB document",
     images: [portfolio8]
   },
-  {
-    id: 9,
-    title: "Maestro by Bandar Pelumas",
-    alamat: "Contract",
-    date: "January 2022 - April 2023",
-    description1:
-      "A React based website application integrated with machine learning model to recognize entity of AJB document using Python and utilize Google Vision API to extract text of AJB document",
-    images: [portfolio9, portfolio2, portfolio3, portfolio4]
-  }
+  // {
+  //   id: 9,
+  //   title: "Maestro by Bandar Pelumas",
+  //   alamat: "Contract",
+  //   date: "January 2022 - April 2023",
+  //   description1:
+  //     "A React based website application integrated with machine learning model to recognize entity of AJB document using Python and utilize Google Vision API to extract text of AJB document",
+  //   images: [portfolio9, portfolio2, portfolio3, portfolio4]
+  // }
   // Add more job data as needed
 ];
 
