@@ -49,6 +49,7 @@ const App = () => {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/cabang/:slug" element={<WorkDetails />} />
+        <Route path="/services/:slug" element={<WorkDetails />} />
         <Route path="/StokOF" element={<StockPageOF />} />
       </Routes>
     </Router>

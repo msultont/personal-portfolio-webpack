@@ -52,14 +52,62 @@ const HomePage = () => {
             <a href="#fh5co-header" className="nav-item nav-link active">
               Home
             </a>
-            <a href="#fh5co-about" className="nav-item nav-link">
-              About
-            </a>
-            <a href="#fh5co-services" className="nav-item nav-link">
-              Services
-            </a>
+            <div className="nav-item dropdown">
+              <a
+                href="#fh5co-services"
+                className="nav-link dropdown-toggle"
+                data-bs-toggle="dropdown"
+                style={{ textTransform: "none" }}
+              >
+                serviceS
+              </a>
+              <div className="dropdown-menu m-0">
+                <Link
+                  to="/services"
+                  className="dropdown-item"
+                  state={{ service: "gantioli" }}
+                >
+                  Ganti Oli
+                </Link>
+                <Link
+                  to="/services"
+                  className="dropdown-item"
+                  state={{ service: "team" }}
+                >
+                  Service Mesin & AC Mobil
+                </Link>
+                <Link
+                  to="/services"
+                  className="dropdown-item"
+                  state={{ service: "booking" }}
+                >
+                  Body Repair
+                </Link>
+                <Link
+                  to="/services"
+                  className="dropdown-item"
+                  state={{ service: "testimonial" }}
+                >
+                  Salon Mobil
+                </Link>
+                <Link
+                  to="/services"
+                  className="dropdown-item"
+                  state={{ service: "sparepart" }}
+                >
+                  Sparepart
+                </Link>
+                <Link
+                  to="/services"
+                  className="dropdown-item"
+                  state={{ service: "layanan-lainnya" }}
+                >
+                  Layanan Lainnya
+                </Link>
+              </div>
+            </div>
             <a href="#fh5co-work" className="nav-item nav-link">
-              Works
+              Cabang Kami
             </a>
           </div>
 
@@ -94,15 +142,23 @@ const HomePage = () => {
             >
               <div className="carousel-inner">
                 <div className="carousel-item active">
-                  <img className="w-100" src={bgImage} alt="Carousel Background 1" />
+                  <img
+                    className="w-100"
+                    src={bgImage}
+                    alt="Carousel Background 1"
+                  />
                 </div>
                 <div className="carousel-item">
-                  <img className="w-100" src={bgImage2} alt="Carousel Background 2" />
+                  <img
+                    className="w-100"
+                    src={bgImage2}
+                    alt="Carousel Background 2"
+                  />
                 </div>
               </div>
             </div>
           </div>
-          {/* Konten utama header (diletakkan di atas carousel) */}}
+          {/* Konten utama header (diletakkan di atas carousel) */}
           <div className="header-main-content">
             <div className="container">
               <div className="row">
@@ -145,7 +201,7 @@ const HomePage = () => {
         </section>
       </div>
 
-            <section id="fh5co-work">
+      <section id="fh5co-work">
         <div className="container">
           <div className="row wow fadeInUp">
             <div className="col-md-11 col-md-offset-2 text-center fh5co-heading">
@@ -155,7 +211,7 @@ const HomePage = () => {
           <div className="row">
             {jobData.map((job, index) => {
               const slug = job.title.toLowerCase().replace(/\s/g, "-");
-              console.log(`Homepage console: ${slug}`)
+              console.log(`Homepage console: ${slug}`);
               return (
                 <div
                   key={index}
@@ -180,7 +236,7 @@ const HomePage = () => {
         </div>
       </section>
 
-      <section id="fh5co-about" className="wow fadeIn" data-wow-delay="0.3s">
+      {/* <section id="fh5co-about" className="wow fadeIn" data-wow-delay="0.3s">
         <div className="container">
           <div className="row">
             <div className="col-md-11 col-md-offset-2 text-center fh5co-heading">
@@ -426,11 +482,10 @@ const HomePage = () => {
             </div>
           </div>
         </div>
-      </section>
-
+      </section> */}
 
       <section className="fh5co-bg-dark wow fadeInUp" data-wow-delay="0.3s">
-        <div className="container-xxl py-5">
+        {/* <div className="container-xxl py-5">
           <div className="container">
             <div className="row g-4">
               <div className="col-lg-8 col-md-6">
@@ -460,7 +515,7 @@ const HomePage = () => {
               </div>
             </div>
           </div>
-        </div>
+        </div> */}
 
         <div className="gototop js-top">
           <a href="#" className="js-gotop">
